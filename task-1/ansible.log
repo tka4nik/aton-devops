@@ -1,0 +1,143 @@
+
+PLAY [webservers] **************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [127.0.0.1]
+
+TASK [Install nginx] ***********************************************************
+
+TASK [nginxinc.nginx : Validate distribution and role variables] ***************
+included: /home/tka4nik/.ansible/roles/nginxinc.nginx/tasks/validate/validate.yml for 127.0.0.1
+
+TASK [nginxinc.nginx : Check whether you are using a supported NGINX distribution] ***
+ok: [127.0.0.1] => {
+    "changed": false,
+    "msg": "Your distribution, Rocky Linux 9.4 (x86_64), is supported by NGINX Open Source."
+}
+
+TASK [nginxinc.nginx : Check that 'nginx_setup' is an allowed value] ***********
+ok: [127.0.0.1] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [nginxinc.nginx : Check that 'nginx_branch' is an allowed value] **********
+ok: [127.0.0.1] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [nginxinc.nginx : Check that 'nginx_install_from' is an allowed value] ****
+ok: [127.0.0.1] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [nginxinc.nginx : Set up prerequisites] ***********************************
+included: /home/tka4nik/.ansible/roles/nginxinc.nginx/tasks/prerequisites/prerequisites.yml for 127.0.0.1
+
+TASK [nginxinc.nginx : Install dependencies] ***********************************
+included: /home/tka4nik/.ansible/roles/nginxinc.nginx/tasks/prerequisites/install-dependencies.yml for 127.0.0.1
+
+TASK [nginxinc.nginx : (Alpine Linux) Install dependencies] ********************
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : (Debian/Ubuntu) Install dependencies] *******************
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : (Amazon Linux/CentOS/Oracle Linux/RHEL) Install dependencies] ***
+ok: [127.0.0.1]
+
+TASK [nginxinc.nginx : (SLES) Install dependencies] ****************************
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : (FreeBSD) Install dependencies using package(s)] ********
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : (FreeBSD) Install dependencies using port(s)] ***********
+skipping: [127.0.0.1] => (item=security/ca_root_nss) 
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : Check if SELinux is enabled] ****************************
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : Configure SELinux] **************************************
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : Set up signing keys] ************************************
+included: /home/tka4nik/.ansible/roles/nginxinc.nginx/tasks/keys/setup-keys.yml for 127.0.0.1
+
+TASK [nginxinc.nginx : (Alpine Linux) Set up NGINX signing key URL] ************
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : (Alpine Linux) Download NGINX signing key] **************
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : (Debian/Red Hat/SLES OSs) Set up NGINX signing key URL] ***
+ok: [127.0.0.1]
+
+TASK [nginxinc.nginx : (Debian/Ubuntu) Add NGINX signing key] ******************
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : (Red Hat/SLES OSs) Add NGINX signing key] ***************
+ok: [127.0.0.1]
+
+TASK [nginxinc.nginx : Install NGINX Open Source] ******************************
+included: /home/tka4nik/.ansible/roles/nginxinc.nginx/tasks/opensource/install-oss.yml for 127.0.0.1
+
+TASK [nginxinc.nginx : Install NGINX from the official package repository] *****
+included: /home/tka4nik/.ansible/roles/nginxinc.nginx/tasks/opensource/install-redhat.yml for 127.0.0.1
+
+TASK [nginxinc.nginx : (AlmaLinux/Amazon Linux/CentOS/Oracle Linux/RHEL/Rocky Linux) Configure NGINX repository] ***
+ok: [127.0.0.1]
+
+TASK [nginxinc.nginx : (AlmaLinux/Amazon Linux/CentOS/Oracle Linux/RHEL/Rocky Linux) Force Yum cache refresh] ***
+ok: [127.0.0.1]
+
+TASK [nginxinc.nginx : (AlmaLinux/Amazon Linux/CentOS/Oracle Linux/RHEL/Rocky Linux) Install NGINX] ***
+ok: [127.0.0.1]
+
+TASK [nginxinc.nginx : Install NGINX from the distribution's package repository] ***
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : Install NGINX from source] ******************************
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : Install NGINX in Unix systems] **************************
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : Set up NGINX Plus license] ******************************
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : Install NGINX Plus] *************************************
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : Install NGINX dynamic modules] **************************
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : Remove NGINX Plus license] ******************************
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : Modify systemd parameters] ******************************
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : Trigger handlers if necessary] **************************
+
+TASK [nginxinc.nginx : Debug NGINX output] *************************************
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : Configure logrotate for NGINX] **************************
+skipping: [127.0.0.1]
+
+TASK [nginxinc.nginx : Install NGINX Amplify] **********************************
+skipping: [127.0.0.1]
+
+TASK [Copy Nginx configuration file] *******************************************
+ok: [127.0.0.1]
+
+TASK [Start nginx] *************************************************************
+ok: [127.0.0.1]
+
+PLAY RECAP *********************************************************************
+127.0.0.1                  : ok=19   changed=0    unreachable=0    failed=0    skipped=21   rescued=0    ignored=0   
+

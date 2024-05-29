@@ -1,0 +1,41 @@
+user {{ nginx_user }};
+worker_processes auto;
+pid /run/nginx.pid;
+
+events {
+    worker_connections 768;
+}
+
+http {
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+
+    server {
+        listen {{ nginx_port }} default_server;
+        listen [::]:{{ nginx_port }} default_server;
+
+        server_name _;
+
+        root {{ nginx_root }};
+
+        index {{ nginx_index }};
+
+        location / {
+            try_files $uri $uri/ =404;
+        }
+
+        error_page 404 /404.html;
+        location = /40x.html {
+        }
+
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+        }
+
+	{% if log_config is defined %}
+        access_log {{ log_config.access_path }};
+        error_log {{ log_config.error_path }};
+        {% endif %}
+    }
+}
+
