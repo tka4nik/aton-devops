@@ -1,0 +1,8 @@
+services:
+  nginx:
+    build: .
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html
