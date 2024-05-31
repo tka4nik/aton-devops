@@ -1,0 +1,3 @@
+[submodule "task-4/aton-cicd"]
+	path = task-4/aton-cicd
+	url = https://gitlab.com/tka4nik/aton-cicd.git
